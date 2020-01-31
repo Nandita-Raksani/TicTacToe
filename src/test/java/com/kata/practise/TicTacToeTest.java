@@ -121,4 +121,13 @@ public class TicTacToeTest {
         ticTacToe.play(0,2);
         assertEquals(SYMBOL_O + IS_THE_WINNER, ticTacToe.play(2,2));
     }
+
+    @Test
+    public void shouldDeclareXAsWinnerIfUpperRightToLowerLeftDiagonallyIsFilledByX(){
+        ticTacToe.play(0,2);
+        ticTacToe.play(0,1);
+        ticTacToe.play(1,1);
+        ticTacToe.play(1,0);
+        assertEquals(SYMBOL_X + IS_THE_WINNER, ticTacToe.play(2,0));
+    }
 }
