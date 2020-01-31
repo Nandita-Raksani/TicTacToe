@@ -11,8 +11,8 @@ public class TicTacToe {
         return gameBoard.isVacant();
     }
 
-    public void play(int row, int column) {
-        gameBoard.markSymbols(row, column);
+    public void play(int row, int column, char symbol) {
+        gameBoard.markSymbols(row, column, symbol);
     }
 
     public char getSymbolAt(int row, int column) {

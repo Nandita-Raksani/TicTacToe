@@ -15,8 +15,8 @@ public class GameBoard {
         return true;
     }
 
-    public void markSymbols(int row, int column) {
-        layout[row][column] = 'X';
+    public void markSymbols(int row, int column, char symbol) {
+        layout[row][column] = symbol;
     }
 
     public char getSymbolAt(int row, int column) {
