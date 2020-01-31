@@ -1,7 +1,13 @@
 package com.kata.practise;
 
 public class TicTacToe {
-    public void startGame() {
-        GameBoard gameBoard = new GameBoard();
+    GameBoard gameBoard;
+
+    public TicTacToe() {
+        gameBoard = new GameBoard();
+    }
+
+    public boolean isVacant() {
+        return gameBoard.isVacant();
     }
 }

@@ -15,8 +15,6 @@ public class TicTacToeTest {
     @Test
     public void shouldStartGameWithAnEmptyBoard(){
         TicTacToe ticTacToe = new TicTacToe();
-        ticTacToe.startGame();
-        GameBoard gameBoard = new GameBoard();
-        assertTrue(gameBoard.isVacant());
+        assertTrue(ticTacToe.isVacant());
     }
 }
