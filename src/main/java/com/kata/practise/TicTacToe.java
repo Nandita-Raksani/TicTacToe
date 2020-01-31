@@ -55,6 +55,8 @@ public class TicTacToe {
         for (int column = 0; column < gridlayout[0].length; column++) {
             if (gridlayout[0][column] == SYMBOL_X && gridlayout[1][column]  == SYMBOL_X && gridlayout[1][column]  == SYMBOL_X && gridlayout[2][column] == SYMBOL_X && gridlayout[column][0] != '\0') {
                 return true;
+            } else if (gridlayout[0][column] == SYMBOL_O && gridlayout[1][column]  == SYMBOL_O && gridlayout[2][column] == SYMBOL_O && gridlayout[0][column]!= '\0') {
+                return true;
             }
         }
         return false;
