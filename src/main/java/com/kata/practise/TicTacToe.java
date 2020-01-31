@@ -21,6 +21,9 @@ public class TicTacToe {
         if(isWinner()) {
             return pastSymbol + IS_THE_WINNER;
         }
+        if(!isVacant()){
+            return "Game is Draw";
+        }
         return null;
     }
 
