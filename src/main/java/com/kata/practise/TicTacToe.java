@@ -36,7 +36,7 @@ public class TicTacToe {
     }
 
     private boolean isWinner() {
-        return isWinIfHorizontalRowOccupiedWithSameSymbol() || isWinIfVerticalColumnOccupiedWithSameSymbol() || isWinIfUpperLeftToLowerRightDiagonalOccupiedWithSameSymbol() || isWinIfUpperRightToLowerLeftDiagonalOccupiedWithSameSymbol();
+        return isWinIfHorizontalRowOccupiedWithSameSymbol() || isWinIfVerticalColumnOccupiedWithSameSymbol() || hasWinnerDiagonally();
     }
 
     private boolean isWinIfHorizontalRowOccupiedWithSameSymbol() {
@@ -75,4 +75,7 @@ public class TicTacToe {
         return false;
     }
 
+    private boolean hasWinnerDiagonally() {
+        return isWinIfUpperLeftToLowerRightDiagonalOccupiedWithSameSymbol() || isWinIfUpperRightToLowerLeftDiagonalOccupiedWithSameSymbol();
+    }
 }
