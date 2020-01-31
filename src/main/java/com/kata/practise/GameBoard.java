@@ -22,4 +22,8 @@ public class GameBoard {
     public char getSymbolAt(int row, int column) {
         return layout[row][column];
     }
+
+    public char[][] getLayout() {
+        return layout;
+    }
 }

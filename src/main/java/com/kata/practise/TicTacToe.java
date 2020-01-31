@@ -12,8 +12,12 @@ public class TicTacToe {
         return gameBoard.isVacant();
     }
 
-    public void play(int row, int column) {
+    public String play(int row, int column) {
         gameBoard.markSymbols(row, column, currentSymbol());
+        if(isWinner()) {
+            return pastSymbol + " is the winner!";
+        }
+        return null;
     }
 
     public char getSymbolAt(int row, int column) {
@@ -25,6 +29,21 @@ public class TicTacToe {
             return pastSymbol = 'O';
         else
             return pastSymbol = 'X';
+    }
+
+    private boolean isWinner() {
+        return isWinIfHorizontalRowOccupiedWithSameSymbol();
+    }
+
+    private boolean isWinIfHorizontalRowOccupiedWithSameSymbol() {
+        char[][] gridlayout = gameBoard.getLayout();
+        for (int row = 0; row < gridlayout[0].length; row++) {
+            if (gridlayout[row][0] == gridlayout[row][1] && gridlayout[row][1] == gridlayout[row][2]
+                    && gridlayout[row][0] != '\0') {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

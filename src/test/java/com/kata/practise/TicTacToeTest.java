@@ -43,4 +43,14 @@ public class TicTacToeTest {
         ticTacToe.play(0,2);
         assertEquals('X', ticTacToe.getSymbolAt(0,2));
     }
+
+    @Test
+    public void shouldDeclareXAsWinnerIfFirstHorizontalRowIsFilledByX(){
+        ticTacToe.play(0,0);
+        ticTacToe.play(1,1);
+        ticTacToe.play(0,1);
+        ticTacToe.play(1,2);
+        assertEquals("X is the winner!", ticTacToe.play(0,2));
+    }
+
 }
