@@ -1,6 +1,10 @@
 package com.kata.practise;
 
 public class TicTacToe {
+    public static final char SYMBOL_O = 'O';
+    public static final char SYMBOL_X = 'X';
+    public static final String IS_THE_WINNER = " is the winner!";
+
     GameBoard gameBoard;
     char pastSymbol;
 
@@ -15,7 +19,7 @@ public class TicTacToe {
     public String play(int row, int column) {
         gameBoard.markSymbols(row, column, currentSymbol());
         if(isWinner()) {
-            return pastSymbol + " is the winner!";
+            return pastSymbol + IS_THE_WINNER;
         }
         return null;
     }
@@ -25,10 +29,10 @@ public class TicTacToe {
     }
 
     public char currentSymbol(){
-        if(pastSymbol != '\0' && pastSymbol == 'X')
-            return pastSymbol = 'O';
+        if(pastSymbol != '\0' && pastSymbol == SYMBOL_X)
+            return pastSymbol = SYMBOL_O;
         else
-            return pastSymbol = 'X';
+            return pastSymbol = SYMBOL_X;
     }
 
     private boolean isWinner() {
