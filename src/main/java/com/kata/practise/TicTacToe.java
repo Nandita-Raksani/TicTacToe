@@ -69,9 +69,7 @@ public class TicTacToe {
     }
     private boolean isWinIfUpperRightToLowerLeftDiagonalOccupiedWithSameSymbol() {
         char[][] gridlayout = gameBoard.getLayout();
-        if (gridlayout[0][2] != '\0' && gridlayout[0][2] == SYMBOL_X && gridlayout[1][1] == SYMBOL_X && gridlayout[2][0] == SYMBOL_X) {
-            return true;
-        } else if (gridlayout[0][2] != '\0' && gridlayout[0][2] == SYMBOL_O && gridlayout[1][1] == SYMBOL_O && gridlayout[2][0] == SYMBOL_O) {
+        if (gridlayout[0][2] != '\0' && gridlayout[0][2] == gridlayout[1][1] && gridlayout[1][1] == gridlayout[2][0]) {
             return true;
         }
         return false;
