@@ -75,4 +75,13 @@ public class TicTacToeTest {
         assertEquals(SYMBOL_X + IS_THE_WINNER, ticTacToe.play(2,2));
     }
 
+    @Test
+    public void shouldDeclareXAsWinnerIfFirstVerticalColumnIsFilledByX(){
+        ticTacToe.play(0,0);
+        ticTacToe.play(1,1);
+        ticTacToe.play(1,0);
+        ticTacToe.play(1,2);
+        assertEquals(SYMBOL_X + IS_THE_WINNER, ticTacToe.play(2,0));
+    }
+
 }

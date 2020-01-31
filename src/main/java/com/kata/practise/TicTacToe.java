@@ -36,7 +36,7 @@ public class TicTacToe {
     }
 
     private boolean isWinner() {
-        return isWinIfHorizontalRowOccupiedWithSameSymbol();
+        return isWinIfHorizontalRowOccupiedWithSameSymbol() || isWinIfVerticalColumnOccupiedWithSameSymbol();
     }
 
     private boolean isWinIfHorizontalRowOccupiedWithSameSymbol() {
@@ -44,6 +44,16 @@ public class TicTacToe {
         for (int row = 0; row < gridlayout[0].length; row++) {
             if (gridlayout[row][0] == gridlayout[row][1] && gridlayout[row][1] == gridlayout[row][2]
                     && gridlayout[row][0] != '\0') {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean isWinIfVerticalColumnOccupiedWithSameSymbol() {
+        char[][] gridlayout = gameBoard.getLayout();
+        for (int column = 0; column < gridlayout[0].length; column++) {
+            if (gridlayout[0][column] == SYMBOL_X && gridlayout[1][column]  == SYMBOL_X && gridlayout[1][column]  == SYMBOL_X && gridlayout[2][column] == SYMBOL_X && gridlayout[column][0] != '\0') {
                 return true;
             }
         }
