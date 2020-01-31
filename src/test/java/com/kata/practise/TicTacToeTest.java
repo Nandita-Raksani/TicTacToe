@@ -9,6 +9,7 @@ public class TicTacToeTest {
     public static final char SYMBOL_X = 'X';
     public static final char SYMBOL_O = 'O';
     public static final String IS_THE_WINNER = " is the winner!";
+    public static final String GAME_IS_DRAW = "Game is Draw";
     TicTacToe ticTacToe;
 
     @Before
@@ -151,6 +152,6 @@ public class TicTacToeTest {
         ticTacToe.play(2,2);
         ticTacToe.play(1,0);
         ticTacToe.play(2,0);
-        assertEquals("Game is Draw", ticTacToe.play(2,1));
+        assertEquals(GAME_IS_DRAW, ticTacToe.play(2,1));
     }
 }
