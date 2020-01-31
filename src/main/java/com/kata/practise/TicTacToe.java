@@ -53,9 +53,7 @@ public class TicTacToe {
     private boolean isWinIfVerticalColumnOccupiedWithSameSymbol() {
         char[][] gridlayout = gameBoard.getLayout();
         for (int column = 0; column < gridlayout[0].length; column++) {
-            if (gridlayout[0][column] == SYMBOL_X && gridlayout[1][column]  == SYMBOL_X && gridlayout[1][column]  == SYMBOL_X && gridlayout[2][column] == SYMBOL_X && gridlayout[column][0] != '\0') {
-                return true;
-            } else if (gridlayout[0][column] == SYMBOL_O && gridlayout[1][column]  == SYMBOL_O && gridlayout[2][column] == SYMBOL_O && gridlayout[0][column]!= '\0') {
+            if (gridlayout[0][column] != '\0' && gridlayout[0][column] == gridlayout[1][column] && gridlayout[1][column] == gridlayout[2][column]) {
                 return true;
             }
         }
