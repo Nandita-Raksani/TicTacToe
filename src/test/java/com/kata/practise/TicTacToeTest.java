@@ -35,4 +35,12 @@ public class TicTacToeTest {
         ticTacToe.play(0,1);
         assertEquals('O', ticTacToe.getSymbolAt(0,1));
     }
+
+    @Test
+    public void shouldAssignThirdTurnAsX(){
+        ticTacToe.play(0,0);
+        ticTacToe.play(0,1);
+        ticTacToe.play(0,2);
+        assertEquals('X', ticTacToe.getSymbolAt(0,2));
+    }
 }
