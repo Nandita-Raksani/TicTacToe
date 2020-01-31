@@ -19,6 +19,9 @@ public class TicTacToe {
     }
 
     public String play(int row, int column) {
+        if(isInValidPosition(row, column)){
+            throw new RuntimeException("Position already occupied, please select another position");
+        }
         gameBoard.markSymbols(row, column, currentSymbol());
         if(isWinner()) {
             return pastSymbol + IS_THE_WINNER;
@@ -27,6 +30,13 @@ public class TicTacToe {
             return GAME_IS_DRAW;
         }
         return null;
+    }
+
+    private boolean isInValidPosition(int row, int column) {
+        if(getSymbolAt(row, column) == EMPTY_SPACE){
+            return false;
+        }
+        return true;
     }
 
     public char getSymbolAt(int row, int column) {

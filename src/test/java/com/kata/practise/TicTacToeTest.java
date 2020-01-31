@@ -154,4 +154,12 @@ public class TicTacToeTest {
         ticTacToe.play(2,0);
         assertEquals(GAME_IS_DRAW, ticTacToe.play(2,1));
     }
+
+    @Test(expected = RuntimeException.class)
+    public void shouldNotAllowToSelectAnOccupiedPosition() {
+        ticTacToe.play(0, 0);
+        ticTacToe.play(0, 1);
+        ticTacToe.play(0,0);
+    }
+
 }
