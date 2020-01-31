@@ -25,13 +25,14 @@ public class TicTacToeTest {
 
     @Test
     public void shouldAssignFirstTurnAsX(){
-        ticTacToe.play(0,0, 'X');
+        ticTacToe.play(0,0);
         assertEquals('X', ticTacToe.getSymbolAt(0,0));
     }
 
     @Test
     public void shouldAssignSecondTurnAsO(){
-        ticTacToe.play(0,1, 'O');
+        ticTacToe.play(0,0);
+        ticTacToe.play(0,1);
         assertEquals('O', ticTacToe.getSymbolAt(0,1));
     }
 }
