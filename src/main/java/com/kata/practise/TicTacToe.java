@@ -19,6 +19,9 @@ public class TicTacToe {
     }
 
     public String play(int row, int column) {
+        if(positionIsOutOfRange(row, column)){
+            throw new RuntimeException("Position is out of the game board range");
+        }
         if(isInValidPosition(row, column)){
             throw new RuntimeException("Position already occupied, please select another position");
         }
@@ -92,4 +95,12 @@ public class TicTacToe {
     private boolean hasWinnerDiagonally() {
         return isWinIfUpperLeftToLowerRightDiagonalOccupiedWithSameSymbol() || isWinIfUpperRightToLowerLeftDiagonalOccupiedWithSameSymbol();
     }
+
+    private boolean positionIsOutOfRange(int row, int column) {
+        if (!(row < 0 || row > 2 || column < 0 || column > 2)) {
+            return false;
+        }
+        return true;
+    }
+
 }

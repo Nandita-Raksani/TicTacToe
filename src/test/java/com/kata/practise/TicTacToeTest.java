@@ -162,4 +162,11 @@ public class TicTacToeTest {
         ticTacToe.play(0,0);
     }
 
+    @Test(expected = RuntimeException.class)
+    public void shouldNotAllowToSelectARangeOutsideOfBoardSize() {
+        ticTacToe.play(0, 0);
+        ticTacToe.play(0, 1);
+        ticTacToe.play(0,3);
+    }
+
 }
