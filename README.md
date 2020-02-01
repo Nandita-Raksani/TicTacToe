@@ -36,3 +36,12 @@ Maven - For Dependency management
 JUnit - Version 4.12 (added dependency in pom.xml)
 Intellij- Any IDE which supports Java
 ```
+
+# How to run the test cases in IDE
+```
+Download project as zip file and unzip the same to a folder. 
+In Intellij Go to File -> Open -> Browse extracted folder and Finish
+Maven will download the dependant jars if already configured in Intellij.
+
+Once above steps done open <b>TicTacToeTest</b> class and right click file and choose Run As -> JUnit Test
+```
